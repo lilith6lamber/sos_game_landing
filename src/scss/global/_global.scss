@@ -1,0 +1,17 @@
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'OpenSans';
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    background: #080A0B;
+}
+
+a, button {
+    display: block;
+    transition: .5s;
+    cursor: pointer;
+}

@@ -1,0 +1,280 @@
+@media (min-width: 767.98px) {
+    .about {
+        &_content {
+            align-items: center;
+        }
+    }
+
+    .features {
+        background-position-x: 0;
+    }
+
+    .quotes {
+        &_content {
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &_wrapper {
+            .quotes_content-btn {
+                margin: 0;
+                margin-right: auto;
+            }
+        }
+    }
+
+    .newsletter {
+        background-position-x: 0;
+
+        &_form {
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: nowrap;
+
+            &-input {
+                min-width: auto;
+                width: 60%;
+            }
+
+            &-btn {
+                margin-top: 0;
+                min-width: auto;
+                width: 40%;
+                margin-left: 15px;
+            }
+        }
+    }
+
+    .footer {
+        &_content {
+            &-socials {
+                justify-content: center;
+
+                .list-item {
+                    margin: 0 15px;
+
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width: 991.98px) {
+
+    .header_content,
+    .about_content,
+    .features_content,
+    .system_content,
+    .quotes_content,
+    .newsletter_content {
+        @include desktopResizeFont;
+    }
+
+    .header {
+        &_content {
+            &-subtitle {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .about {
+        padding: 200px 0 150px;
+
+        &_content {
+            &-gallery {
+                padding: 0 60px;
+
+                .owl-nav {
+                    .owl-prev {
+                        left: 15px;
+                    }
+
+                    .owl-next {
+                        right: 15px;
+                    }
+                }
+
+                .owl-dots {
+                    bottom: 27px;
+
+                    &_item {
+                        padding-right: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .features {
+        padding: 258px 0;
+
+        &_content {
+            .accordion {
+
+                &_item {
+                    position: relative;
+
+                    &-title {
+                        font-size: 36px;
+                        line-height: 43px;
+                    }
+
+                    &-text {
+                        font-size: 18px;
+                        line-height: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    .system {
+        padding: 145px 0 170px;
+
+        &_content {
+            &-table {
+                .property {
+                    font-size: 24px;
+                    line-height: 29px;
+                }
+            }
+        }
+    }
+
+    .quotes {
+        padding: 160px 0;
+
+        &_content {
+            &-list {
+                .list-item {
+                    max-width: 450px;
+
+                    &:first-of-type {
+                        margin-left: auto;
+                    }
+
+                    &:last-of-type {
+                        margin-left: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .newsletter {
+        padding: 220px 0 142px;
+        background-position-x: 20px;
+
+        .container {
+            padding-right: 30px;
+        }
+
+        &_content {
+            &-text {
+                max-width: 650px;
+            }
+        }
+
+        &_form {
+            justify-content: space-between;
+
+            &-btn {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .footer {
+        &_content {
+            .wrapper {
+                flex-direction: row !important;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            &-nav {
+                margin: 0;
+                font-size: 11px;
+                flex-grow: 2;
+
+                .list-item {
+                    margin: 0 15px;
+                }
+            }
+
+            &-socials {
+                padding: 0;
+                justify-content: flex-end;
+            }
+
+            &-copy_wrapper {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+            }
+
+            &-policies {
+                display: flex;
+                text-align: right;
+                justify-content: flex-end;
+                flex-grow: 2;
+            }
+
+            &-copyright {
+                flex-grow: 1;
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        &_nav {
+            padding-bottom: 21px;
+            &.sticky, &.menu-open {
+                position: fixed;
+                background: rgba($black, .7);
+                backdrop-filter: blur(5px);
+                box-shadow: 0px 5px 10px 0px rgba(255, 181, 72, 0.5);
+            }
+            &.sticky + .container {
+                padding-bottom: 30px;
+            }
+            .menu-btn {
+                width: 24px;
+                height: 17px;
+                background: url('../img/menu.svg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                &:hover {
+                    opacity: .8;
+                }
+            }
+            &>.container {
+                flex-wrap: wrap;
+            }
+            &-list {
+                display: none !important;
+                &.open {
+                    order: 3;
+                    width: 100%;
+                    margin-top: 30px;
+                    display: block !important;
+                    .list-item {
+                        margin: 15px 0;
+                    }
+                }
+            }
+        }
+    }
+}

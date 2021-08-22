@@ -1,0 +1,105 @@
+@mixin font-face($name, $file, $weight: 400, $style: normal) {
+    @font-face {
+        font-family: "#{$name}";
+        src: local("#{$file}"),
+        url('../fonts/#{$file}.woff2') format('woff2'),
+        url('../fonts/#{$file}.woff') format('woff');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}
+
+@mixin btn {
+    background: $mustard;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: $black;
+    text-transform: none;
+    max-width: 220px;
+    min-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+@mixin btnHoverBorder {
+    border: 1px solid transparent;
+
+    &:hover,
+    &:focus {
+        border-color: $mustard;
+        background: transparent;
+        color: $mustard;
+    }
+}
+
+@mixin sectionTitle {
+    font-family: 'BebasNeue';
+    font-size: 33px;
+    line-height: 40px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+@mixin sectionSubtitle {
+    font-family: 'BebasNeue';
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@mixin sectionText {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: justify;
+}
+
+@mixin footerHover {
+    .list-item a {
+        padding: 0 10px;
+        width: fit-content;
+        margin: 0 auto;
+        position: relative;
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            height: 12px;
+            width: 1px;
+            background: transparent;
+            bottom: 12px;
+            transition: .5s;
+        }
+
+        &:after {
+            right: 0;
+        }
+
+        &:before {
+            left: 0;
+        }
+
+        &:hover::before,
+        &:hover::after {
+            background: #fff;
+        }
+    }
+}
+
+@mixin desktopResizeFont {
+    &-title {
+        font-size: 80px;
+        line-height: 96px;
+    }
+
+    &-subtitle {
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
