@@ -1,12 +1,28 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+const wait = (delay = 0) =>
+    new Promise(resolve => setTimeout(resolve, delay));
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+const setVisible = (selector, visible) => {
+    selector = document.getElementById(selector);
+    if (visible) {
+        selector.classList.add("visible");
+        document.documentElement.style.overflowY = 'hidden';
+    } else {
+        selector.classList.remove("visible");
+        document.body.classList.add("visible");
+        document.documentElement.style.overflowY = 'visible';
+    }
+}
+
+setVisible('loadingScreen', true);
+
+document.addEventListener('DOMContentLoaded', () =>
+    wait(1200).then(() => {
+        setVisible('loadingScreen', false);
+    }));
+
+
+
+
 
 $(document).ready(function () {
 

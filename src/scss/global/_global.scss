@@ -2,16 +2,47 @@ html, body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'OpenSans';
+    font-family: 'OpenSans', sans-serif;
     font-size: 18px;
     color: #fff;
     font-weight: 400;
     background: #080A0B;
+    visibility: hidden;
+    &.visible {
+        visibility: visible;
+    }
 }
 
 a, button {
     display: block;
     transition: .5s;
     cursor: pointer;
+}
+
+
+//LOADING SCREEN
+
+#loadingScreen {
+    background-color: #444242;
+    background-image: url("../img/loader.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: .4s;
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+    }
 }
